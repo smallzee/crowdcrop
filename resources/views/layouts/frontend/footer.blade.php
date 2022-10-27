@@ -11,7 +11,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
                                 <div class="footer-widget__column footer-widget__about">
                                     <div class="footer-widget__about-logo">
-                                        <a href="{{url('/')}}"><img src="{{asset('assets/images/resources/footer-logo.png')}}" alt=""></a>
+                                        <a href="{{url('/')}}"><img src="{{asset('assets/images/resources/logo-1.png')}}" style="width: 100%" alt=""></a>
                                     </div>
                                     <div class="footer-widget__about-contact-box">
                                         <p><a href="mailto:{{get_settings('official_email')}}"><i class="fa fa-envelope"></i>{{get_settings('official_email')}}</a></p>

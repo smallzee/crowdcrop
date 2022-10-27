@@ -17,6 +17,8 @@ Route::get('/419', 'HomeController@error_page_expired')->name('error_page_expire
 Route::resource('/contact-us', 'ContactController');
 Route::resource('/about-us', 'AboutController');
 Route::resource('/farmer', "FarmerController");
+Route::resource('/partner-farmer', "PartnerFarmerController");
+
 
 Auth::routes();
 Route::group(['namespace'=>'panel','prefix'=>'panel'], function (){

@@ -27,18 +27,9 @@
                             <div class="icon">
                                 <img src="{{asset('assets/images/resources/sec-title-icon1.png')}}" alt="">
                             </div>
-                            <h2 class="sec-title__title">Register Now</h2>
+                            <h2 class="sec-title__title">{{ $partner->name }}</h2>
                         </div>
-                        <p class="contact-page__left-text">We are committed to providing our customers with
-                            exceptional service while offering our employees the best training.</p>
-                        <div class="contact-page__social-link">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
+                        <p class="contact-page__left-text">{{$partner->description}}</p>
                     </div>
                 </div>
                 <!--End Contact Page Right-->
@@ -46,7 +37,7 @@
                 <!--Start Contact Page Right-->
                 <div class="col-xl-8 col-lg-8">
                     <div class="contact-page__right">
-                        <form action="{{route('farmer.store')}}" method="post" class="comment-one__form "
+                        <form action="{{route('partner-farmer.store')}}" method="post" class="comment-one__form "
                               novalidate="novalidate">
                             @csrf
                             <div class="row">
@@ -78,23 +69,23 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <label for="">Volume Sold</label>
+                                    <label for="">Volume Sold (in Kg)</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Volume Sold" name="volume_sold" value="{{old('volume_sold')}}" id="volume_sold" required>
+                                        <input type="text" placeholder="Volume Sold (in Kg)" name="volume_sold" id="volume_sold" value="{{old('volume_sold')}}" id="volume_sold" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
-                                    <label for="">Amount Due</label>
-                                    <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Amount Due" name="amount" value="{{old('amount')}}" id="amount" required>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
                                     <label for="">Price Per Kg</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Price Per Kg" name="price_per_kg" value="{{old('price_per_kg')}}"  id="price_per_kg" required>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <label for="">Amount Due</label>
+                                    <div class="comment-form__input-box">
+                                        <input type="text" placeholder="Amount Due" readonly name="amount" value="{{old('amount')}}" id="amount">
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12">
@@ -139,4 +130,18 @@
         </div>
     </section>
     <!--End Contact Page-->
+
+    <script>
+        $(function () {
+            $("#price_per_kg, #volume_sold").blur(function () {
+                var price_per_kg = parseFloat($("#price_per_kg").val());
+                var volume_sold = parseFloat($("#volume_sold").val());
+
+                if (price_per_kg >= 0 && volume_sold >= 0) {
+                    var total_amount = price_per_kg  * volume_sold;
+                    $("#amount").val(total_amount);
+                }
+            });
+        });
+    </script>
 @endpush

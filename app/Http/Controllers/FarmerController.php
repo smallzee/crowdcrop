@@ -31,8 +31,7 @@ class FarmerController extends Controller
     public function create()
     {
         //
-        $page_title = "Farmer Registration";
-        return view('farmer',compact('page_title'));
+
     }
 
     /**

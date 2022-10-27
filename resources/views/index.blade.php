@@ -34,7 +34,6 @@
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />
                                         </div>
-                                        <a href="{{route('farmer.create')}}" class="thm-btn">Farmer Registration</a>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +58,6 @@
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />
                                         </div>
-                                        <a href="{{route('farmer.create')}}" class="thm-btn">Farmer Registration</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,61 +94,32 @@
             </div>
             <div class="row">
 
+                @foreach(\App\Partners::whereStatus(1)->orderBy('name')->paginate(10) as $value)
+
                 <!--Start Single Services One-->
                 <div class="col-xl-4 col-lg-6 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1000ms">
                     <div class="services-one__single">
                         <div class="services-one__single-img">
                             <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img2.jpg')}}" alt="" />
+                                <img src="{{asset('assets/images/'.$value->image)}}" alt="" />
                             </div>
                         </div>
                         <div class="services-one__single-content text-center">
                             <div class="services-one__single-img-icon">
                                 <span class="icon-harvest"></span>
                             </div>
-                            <p>AgroEknor is a food and agricultural business with farming operations across over 5 states in Nigeria.</p>
+
+                            <h1>{{ $value->name }}</h1>
+                            <p class="mt-2 mb-2">{{ $value->description }}</p>
+
+                            <a href="{{route('partner-farmer.show',base64_encode($value->id))}}" class="btn btn-outline-success btn-md">Farmer Registration</a>
                         </div>
                     </div>
                 </div>
                 <!--End Single Services One-->
 
-                <!--Start Single Services One-->
-                <div class="col-xl-4 col-lg-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img3.jpg')}}" alt="" />
-                            </div>
+                @endforeach
 
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                <span class="icon-growth"></span>
-                            </div>
-                            <p>AgroEknor requires a service to facilitate cash payments in amounts of N500k to N1.5m to its smallholder farmers.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-
-                <!--Start Single Services One-->
-                <div class="col-xl-4 col-lg-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img4.jpg')}}" alt="" />
-                            </div>
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                <span class="icon-dairy-products"></span>
-                            </div>
-                            <p>These farmers are either unbanked or underserved due to lack of adequate banking infrastructure in rural areas.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-            </div>
         </div>
     </section>
     <!--Services One End-->

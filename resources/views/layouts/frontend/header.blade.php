@@ -43,7 +43,6 @@
                             <div class="main-header--one__bottom-left">
                                 <ul class="main-menu__list">
                                     <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
-                                    <li><a href="{{route('farmer.create')}}">Farmer Registration</a></li>
                                     <li><a href="{{route('farmer.index')}}">Check Status</a></li>
                                     <li><a href="{{route('contact-us.index')}}">Contact Us</a></li>
                                 </ul>

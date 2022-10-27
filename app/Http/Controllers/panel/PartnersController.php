@@ -18,7 +18,8 @@ class PartnersController extends Controller
     {
         //
         $page_title = "All Partners";
-        return view('panel.partners.index',compact('page_title'));
+        $partners = Partners::orderBy('name')->paginate(10);
+        return view('panel.partners.index',compact('page_title','partners'));
     }
 
     /**
@@ -56,7 +57,7 @@ class PartnersController extends Controller
         if ($request->has('image')){
             $file = $request->file('image');
             $image = time().$file->getClientOriginalName();
-            $file->move(public_path('public/assets/images'),$image);
+            $file->move(base_path('public/assets/images'),$image);
         }
 
         Partners::create([
@@ -88,6 +89,9 @@ class PartnersController extends Controller
     public function edit($id)
     {
         //
+        $page_title = "Edit Partner";
+        $partner = Partners::find($id);
+        return view('panel.partners.edit',compact('page_title','partner'));
     }
 
     /**
@@ -100,6 +104,31 @@ class PartnersController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $validator = Validator::make($request->all(),[
+            'name'=>'required|',
+            'description'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return back()->with('alert_error',$validator->errors()->first());
+        }
+        $partner = Partners::find($id);
+
+        if ($request->has('image')){
+            $file = $request->file('image');
+            $image = time().$file->getClientOriginalName();
+            $file->move(base_path('public/assets/images'),$image);
+        }else{
+            $image = $partner->image;
+        }
+
+        $partner->name = $request->name;
+        $partner->description = $request->description;
+        $partner->image = $image;
+        $partner->save();
+
+       return back()->with('alert_success','Partner has been updated successfully');
     }
 
     /**

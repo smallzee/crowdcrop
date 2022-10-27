@@ -3,6 +3,7 @@
 @push('content')
 <div class="col-sm-12">
     <form action="{{route('partners.store')}}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
             <label for="">Name</label>
             <input type="text" class="form-control" required name="name" placeholder="Name" id="">

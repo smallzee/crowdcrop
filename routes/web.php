@@ -24,6 +24,7 @@ Route::group(['namespace'=>'panel','prefix'=>'panel'], function (){
     Route::resource('/dashboard', "DashboardController");
     Route::resource('/role', "RoleController");
     Route::resource('/partners', "PartnersController");
+    Route::resource('/partners-agent', "PartnerAgentController");
     Route::resource('/administrative', "AdministrativeController");
     Route::resource('/change-password', "ChangePasswordController");
     Route::resource('/farmers', "FarmersController");

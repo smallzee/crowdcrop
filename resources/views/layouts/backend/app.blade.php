@@ -35,7 +35,6 @@
         body {
             font-family: var(--agriox-font, "DM Sans", sans-serif);
             color: var(--agriox-color-1, #687469);
-            font-size: 18px;
             line-height: 34px;
             font-weight: 400;
         }

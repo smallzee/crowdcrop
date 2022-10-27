@@ -48,7 +48,6 @@
             <ul>
                 <li><a href="{{route('partners.index')}}"><i class="fa fa-circle-o"></i> &nbsp; All Partners</a></li>
                 <li><a href="{{route('partners.create')}}"><i class="fa fa-circle-o"></i> &nbsp; Create Partners</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> &nbsp; Create Agent Partner</a></li>
             </ul>
         </li>
 

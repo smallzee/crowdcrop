@@ -27,7 +27,12 @@
                         <td>{{ $value->description }}</td>
                         <td>{{ ($value->status == 1) ? 'Active' : 'In-active' }}</td>
                         <td>{{ $value->updated_at }}</td>
-                        <td><a href="{{route('partners.edit',$value->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{route('partners.show',$value->id)}}" class="btn btn-primary btn-sm">View</a>
+                                <a href="{{route('partners.edit',$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

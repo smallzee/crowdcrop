@@ -25,6 +25,7 @@ class CreateFarmerTable extends Migration
             $table->string('account_number');
             $table->string('account_name');
             $table->string('application_id');
+            $table->integer('partner_id')->default(0);
             $table->enum('status',['pending','approved','rejected'])->default('pending');
             $table->integer('authorized_by_id')->default('0');
             $table->integer('approved_by_id')->default(0);

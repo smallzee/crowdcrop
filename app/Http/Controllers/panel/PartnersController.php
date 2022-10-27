@@ -78,6 +78,9 @@ class PartnersController extends Controller
     public function show($id)
     {
         //
+        $partner = Partners::find($id);
+        $page_title = ucwords($partner->name);
+        return view('panel.partners.show',compact('partner','page_title'));
     }
 
     /**

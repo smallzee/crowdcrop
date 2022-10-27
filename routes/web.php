@@ -18,6 +18,7 @@ Route::resource('/contact-us', 'ContactController');
 Route::resource('/about-us', 'AboutController');
 Route::resource('/farmer', "FarmerController");
 Route::resource('/partner-farmer', "PartnerFarmerController");
+Route::resource('/partner', "PartnerController");
 
 
 Auth::routes();

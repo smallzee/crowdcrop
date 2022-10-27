@@ -43,6 +43,14 @@
                             <div class="main-header--one__bottom-left">
                                 <ul class="main-menu__list">
                                     <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">{{ config('app.name') }} Partners</a>
+                                        <ul>
+                                            @foreach(\App\Partners::whereStatus(1)->orderBy('name')->get() as $value)
+                                            <li><a href="{{route('partner.show',base64_encode($value->id))}}">{{ ucwords($value->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
                                     <li><a href="{{route('farmer.index')}}">Check Status</a></li>
                                     <li><a href="{{route('contact-us.index')}}">Contact Us</a></li>
                                 </ul>

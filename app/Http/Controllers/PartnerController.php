@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Farmer;
-use App\Mail\ApplicationNotification;
+use App\Partners;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
 
-class FarmerController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +15,6 @@ class FarmerController extends Controller
     public function index()
     {
         //
-
-        $page_title = "Check Farmer Status";
-        return view('status',compact('page_title'));
     }
 
     /**
@@ -31,7 +25,6 @@ class FarmerController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -43,7 +36,6 @@ class FarmerController extends Controller
     public function store(Request $request)
     {
         //
-
     }
 
     /**
@@ -55,10 +47,10 @@ class FarmerController extends Controller
     public function show($id)
     {
         //
-
-        $farmer = Farmer::find($id);
-        $page_title = "Farmer Details";
-        return view('applicant',compact('page_title','farmer'));
+        $partner_id = base64_decode($id);
+        $partner = Partners::find($partner_id);
+        $page_title = ucwords($partner->name);
+        return view('partner',compact('partner','page_title'));
     }
 
     /**
@@ -82,22 +74,6 @@ class FarmerController extends Controller
     public function update(Request $request, $id)
     {
         //
-
-        $validator = Validator::make($request->all(),[
-            'application_id'=>'required'
-        ]);
-
-        if ($validator->fails()){
-            return back()->with('alert_error',$validator->errors()->first());
-        }
-
-        $farmer = Farmer::where('application_id',$request->application_id);
-        if ($farmer->count() == 0){
-            return back()->with('alert_error','Invalid application id entered');
-        }
-
-        $farmer_details = $farmer->first();
-        return redirect(route('farmer.show',$farmer_details->id));
     }
 
     /**

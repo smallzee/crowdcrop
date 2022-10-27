@@ -27,8 +27,6 @@
                                     <h2 class="footer-widget__title">Explore</h2>
                                     <ul class="footer-widget__explore-list">
                                         <li class="footer-widget__explore-list-item"><a href="{{route('contact-us.index')}}">Get in Touch</a></li>
-                                        <li class="footer-widget__explore-list-item"><a href="{{route('farmer.create')}}">Farmer Registration</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>

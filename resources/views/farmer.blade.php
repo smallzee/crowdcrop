@@ -114,6 +114,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" name="partner_id" value="{{ $partner->id }}" id="">
                             <div style="margin-bottom: 20px;">
                                 <div class="g-recaptcha" data-sitekey="{{get_settings('site_key')}}"></div>
                             </div>

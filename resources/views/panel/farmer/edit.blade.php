@@ -45,6 +45,10 @@
                 <td>{{ $farmer->account_name }}</td>
             </tr>
             <tr>
+                <td>Partner</td>
+                <td>{{ $farmer->partner->name }}</td>
+            </tr>
+            <tr>
                 <td>Account Number</td>
                 <td>{{ $farmer->account_number }}</td>
             </tr>

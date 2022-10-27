@@ -13,4 +13,8 @@ class Farmer extends Model
     function bank(){
         return $this->hasOne(Banks::class,'id','bank_id');
     }
+
+    function partner(){
+        return $this->hasOne(Partners::class,'id','partner_id');
+    }
 }

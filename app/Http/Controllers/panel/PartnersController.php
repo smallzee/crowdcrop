@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\panel;
 
+use App\Farmer;
 use App\Http\Controllers\Controller;
 use App\Partners;
 use App\User;
@@ -81,8 +82,9 @@ class PartnersController extends Controller
         //
         $partner = Partners::find($id);
         $page_title = ucwords($partner->name);
+        $farmers = Farmer::where('partner_id',$id)->paginate(10);
         $users = User::orderBy('id','desc')->where('role_id',2)->where('partner_id',$id)->paginate(10);
-        return view('panel.partners.show',compact('partner','page_title','users'));
+        return view('panel.partners.show',compact('partner','page_title','users','farmers'));
     }
 
     /**

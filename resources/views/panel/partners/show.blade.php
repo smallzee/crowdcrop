@@ -93,7 +93,7 @@
                                     <td>{{ $value->phone_number }}</td>
                                     <td>{{ $value->created_at }}</td>
                                     <td>{{ $value->updated_at }}</td>
-                                    <td><a href="{{route('administrative.edit',$value->id)}}" class="btn btn-primary">Edit</a></td>
+                                    <td><a href="{{route('partners-agent.edit',$value->id)}}" class="btn btn-primary">Edit</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -101,7 +101,59 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tab-third">
-                    <p>Vestibulum cursus augue sed leo tempor, at aliquam orci dictum. Sed mattis metus id velit aliquet, et interdum nulla porta. Etiam euismod pellentesque purus, in fermentum eros venenatis ut. Praesent vitae nibh ac augue gravida lacinia non a ipsum. Aenean vestibulum eu turpis eu posuere. Sed eget lacus lacinia, mollis urna et, interdum dui. Donec sed diam ut metus imperdiet malesuada. Maecenas tincidunt ultricies ipsum, lobortis pretium dolor sodales ut. Donec nec fringilla nulla. In mattis sapien lorem, nec tincidunt elit scelerisque tempus.</p>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sortable ">
+                                <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>Application Id</th>
+                                    <th>Email Address</th>
+                                    <th>Full Name</th>
+                                    <th>Phone Number</th>
+                                    <th>LGA</th>
+                                    <th>Volume Sold</th>
+                                    <th>Amount Due</th>
+                                    <th>Price Per Kg</th>
+                                    <th>Bank Name</th>
+                                    <th>Account Number</th>
+                                    <th>Account Name</th>
+                                    <th>Authorized By</th>
+                                    <th>Approved By</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @php
+                                    $sn =1;
+                                @endphp
+                                @foreach($farmers as $value)
+                                    <tr>
+                                        <td>{{ $sn++ }}</td>
+                                        <td>{{ $value->application_id }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->phone_number }}</td>
+                                        <td>{{ $value->lga }}</td>
+                                        <td>{{$value->volume_sold}}</td>
+                                        <td>{{$value->amount_due}}</td>
+                                        <td>{{$value->price_per_kg}}</td>
+                                        <td>{{$value->bank->name}}</td>
+                                        <td>{{$value->account_number}}</td>
+                                        <td>{{$value->account_name}}</td>
+                                        <td>{{ ($value->authorized_by_id != 0) ? \App\User::find($value->authorized_by_id)->name : 'N/A' }}</td>
+                                        <td>{{ ($value->approved_by_id != 0) ? \App\User::find($value->approved_by_id)->name : 'N/A' }}</td>
+                                        <td>{{ $value->created_at }}</td>
+                                        <td>{{ $value->updated_at }}</td>
+                                        <td><a href="{{route('farmers.edit',$value->id)}}" class="btn btn-primary btn-sm">View</a></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

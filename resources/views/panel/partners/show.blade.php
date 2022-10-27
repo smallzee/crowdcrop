@@ -45,6 +45,8 @@
                                 </div>
                             </div>
 
+                            <input type="hidden" name="partner" value="{{ $partner->id }}" id="">
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="">Password</label>
@@ -66,7 +68,37 @@
                     </form>
                 </div>
                 <div class="tab-pane" id="tab-second">
-                    <p>Donec tristique eu sem et aliquam. Proin sodales elementum urna et euismod. Quisque nisl nisl, venenatis eget dignissim et, adipiscing eu tellus. Sed nulla massa, luctus id orci sed, elementum consequat est. Proin dictum odio quis diam gravida facilisis. Sed pharetra dolor a tempor tristique. Sed semper sed urna ac dignissim. Aenean fermentum leo at posuere mattis. Etiam vitae quam in magna viverra dictum. Curabitur feugiat ligula in dui luctus, sed aliquet neque posuere.</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sortable ">
+                            <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>Email Address</th>
+                                <th>Full Name</th>
+                                <th>Phone Number</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @php
+                                $sn =1;
+                            @endphp
+                            @foreach($users as $value)
+                                <tr>
+                                    <td>{{ $sn++ }}</td>
+                                    <td>{{ $value->email }}</td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>{{ $value->phone_number }}</td>
+                                    <td>{{ $value->created_at }}</td>
+                                    <td>{{ $value->updated_at }}</td>
+                                    <td><a href="{{route('administrative.edit',$value->id)}}" class="btn btn-primary">Edit</a></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="tab-pane" id="tab-third">
                     <p>Vestibulum cursus augue sed leo tempor, at aliquam orci dictum. Sed mattis metus id velit aliquet, et interdum nulla porta. Etiam euismod pellentesque purus, in fermentum eros venenatis ut. Praesent vitae nibh ac augue gravida lacinia non a ipsum. Aenean vestibulum eu turpis eu posuere. Sed eget lacus lacinia, mollis urna et, interdum dui. Donec sed diam ut metus imperdiet malesuada. Maecenas tincidunt ultricies ipsum, lobortis pretium dolor sodales ut. Donec nec fringilla nulla. In mattis sapien lorem, nec tincidunt elit scelerisque tempus.</p>

@@ -25,7 +25,7 @@ class AdministrativeController extends Controller
     {
         //
         $page_title = "All Administrative";
-        $users = User::orderBy('id','desc')->paginate(10);
+        $users = User::orderBy('id','desc')->where('role_id',1)->paginate(10);
         return view('panel.administrative.index',compact('page_title','users'));
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\panel;
 
 use App\Http\Controllers\Controller;
 use App\Partners;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -80,7 +81,8 @@ class PartnersController extends Controller
         //
         $partner = Partners::find($id);
         $page_title = ucwords($partner->name);
-        return view('panel.partners.show',compact('partner','page_title'));
+        $users = User::orderBy('id','desc')->where('role_id',2)->where('partner_id',$id)->paginate(10);
+        return view('panel.partners.show',compact('partner','page_title','users'));
     }
 
     /**

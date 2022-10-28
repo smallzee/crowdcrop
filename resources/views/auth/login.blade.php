@@ -9,7 +9,7 @@
     <div class="form-holder">
         <div class="form-content">
             <div class="form-items">
-                <h3 al>Admin Login</h3>
+                <h3 align="center">@yield('page_title')</h3>
                 <p>Please enter your login credential</p>
                 @error('email')
                 <script>

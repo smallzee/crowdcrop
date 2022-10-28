@@ -23,20 +23,42 @@ Route::resource('/partner', "PartnerController");
 
 Auth::routes();
 Route::group(['namespace'=>'panel','prefix'=>'panel'], function (){
-    // dashboard
-    Route::resource('/dashboard', "DashboardController");
-    Route::resource('/role', "RoleController");
-    Route::resource('/partners', "PartnersController");
-    Route::resource('/partners-agent', "PartnerAgentController");
-    Route::resource('/administrative', "AdministrativeController");
-    Route::resource('/change-password', "ChangePasswordController");
-    Route::resource('/farmers', "FarmersController");
-    // settings
-    Route::resource('/settings', "SettingsController");
 
-    Route::get('/logout', function () {
-        auth()->logout();
-        return redirect('login')->with('alert_success','You have successfully logged out');
+    Route::middleware(['IsAdmin'])->group(function (){
+            // dashboard
+        Route::resource('/dashboard', "DashboardController");
+        Route::resource('/role', "RoleController");
+        Route::resource('/partners', "PartnersController");
+        Route::resource('/partners-agent', "PartnerAgentController");
+        Route::resource('/administrative', "AdministrativeController");
+        Route::resource('/change-password', "ChangePasswordController");
+        Route::resource('/farmers', "FarmersController");
+        // settings
+        Route::resource('/settings', "SettingsController");
+
+        Route::get('/logout', function () {
+            auth()->logout();
+            return redirect('login')->with('alert_success','You have successfully logged out');
+        });
     });
+});
 
+Route::group(['namespace'=>'agent','prefix'=>'agent'], function (){
+
+    Route::middleware(['IsAgent'])->group(function (){
+        // dashboard
+        Route::resource('/dashboard', "agent/AgentDashboard");
+        Route::resource('/partners', "PartnersController");
+        Route::resource('/partners-agent', "PartnerAgentController");
+        Route::resource('/administrative', "AdministrativeController");
+        Route::resource('/change-password', "ChangePasswordController");
+        Route::resource('/farmers', "FarmersController");
+        // settings
+        Route::resource('/settings', "SettingsController");
+
+        Route::get('/logout', function () {
+            auth()->logout();
+            return redirect('login')->with('alert_success','You have successfully logged out');
+        });
+    });
 });

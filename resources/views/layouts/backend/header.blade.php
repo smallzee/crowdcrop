@@ -60,6 +60,10 @@
             <a href="{{route('settings.index')}}"><i class="fa fa-cogs"></i> <span>Website Settings</span></a>
         </li>
 
+        <li>
+            <a href="{{url('panel/logout')}}"><i class="fa fa-sign-out text-red"></i> <span>Logout</span></a>
+        </li>
+
     </ul>
 
 </div>

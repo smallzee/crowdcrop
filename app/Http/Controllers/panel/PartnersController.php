@@ -80,6 +80,9 @@ class PartnersController extends Controller
     public function show($id)
     {
         //
+        if (auth()->user()->role_id == 2 && auth()->user()->partner_id != $id){
+            return abort(404);
+        }
         $partner = Partners::find($id);
         $page_title = ucwords($partner->name);
         $farmers = Farmer::where('partner_id',$id)->paginate(10);

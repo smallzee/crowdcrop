@@ -1,15 +1,10 @@
 @extends('layouts.backend.app')
 
 @push('main')
-    <div class="col-md-3">
-        <a href="#" class="tile tile-primary">
-            {{ \App\User::count() }} <p>Total Admin</p>
-        </a>
-    </div>
 
     @foreach(array('pending','approved','rejected') as $value)
-        <div class="col-md-3">
-            <a href="#" class="tile tile-primary">
+        <div class="col-md-4">
+            <a href="#" class="tile tile-primary mb-2" style="padding: 30px">
                 {{ \App\Farmer::where('status',$value)->count() }} <p>{{ucwords($value)}} Farmers</p>
             </a>
         </div>
@@ -46,7 +41,7 @@
                 @php
                     $sn =1;
                 @endphp
-                @foreach(\App\Farmer::orderBy('id','desc')->limit(5)->get() as $value)
+                @foreach($farmers as $value)
                     <tr>
                         <td>{{ $sn++ }}</td>
                         <td>{{ $value->application_id }}</td>

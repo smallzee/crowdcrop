@@ -18,6 +18,7 @@
             <a href="{{route('dashboard.index')}}"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
         </li>
 
+        @if(auth()->user()->role_id == 1)
         <li>
             <a href="{{route('role.index')}}"><i class="fa fa-pagelines"></i> <span>Role</span></a>
         </li>
@@ -59,6 +60,7 @@
         <li>
             <a href="{{route('settings.index')}}"><i class="fa fa-cogs"></i> <span>Website Settings</span></a>
         </li>
+        @endif
 
         <li>
             <a href="{{url('panel/logout')}}"><i class="fa fa-sign-out text-red"></i> <span>Logout</span></a>

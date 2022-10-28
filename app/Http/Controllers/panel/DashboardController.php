@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\panel;
 
+use App\Farmer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,12 @@ class DashboardController extends Controller
     {
         //
         $page_title = "Dashboard";
-        return  view('panel.dashboard',compact('page_title'));
+        if (auth()->user()->role_id == 1){
+            $farmers = Farmer::orderBy('id','desc')->limit(5)->get();
+        }else{
+            $farmers = Farmer::orderBy('id','desc')->where('partner_id',auth()->user()->partner_id)->limit(5)->get();
+        }
+        return  view('panel.dashboard',compact('page_title','farmers'));
     }
 
     /**

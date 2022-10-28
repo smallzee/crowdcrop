@@ -29,48 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-
-    public function showLoginForm()
-    {
-        if (Auth::check() && Auth::user()->role_id == 1){
-            return redirect()->intended('panel/dashboard');
-        }elseif (Auth::check() && Auth::user()->role_id == 2){
-            return redirect()->intended('agent/dashboard');
-        }else{
-            return view('auth.login');
-        }
-    }
-
-    public function logout(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'email'=>'required|email',
-            'password'=>'required'
-        ]);
-
-        if ($validator->fails()){
-            return back()->with('alert_error',$validator->errors()->first())->withInput();
-        }
-
-        $log  = Auth::attempt([
-            'email'=>$request->email,
-            'password'=>$request->password
-        ]);
-
-
-        if($log){
-            if (Auth::user()->role_id == 1){
-                return redirect()->intended('panel/dashboard');
-            }elseif (Auth::user()->role_id == 2){
-                return redirect()->intended('agent/dashboard');
-            } else{
-                return back()->with("alert_error", 'Access denied')->withInput();
-            }
-
-        }else{
-            return back()->with('alert_error','Invalid login details');
-        }
-    }
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.

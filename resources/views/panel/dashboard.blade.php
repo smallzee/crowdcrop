@@ -5,7 +5,7 @@
     @if(auth()->user()->role_id == 1)
         @foreach(array('pending','approved','rejected') as $value)
             <div class="col-md-4">
-                <a href="#" class="tile tile-primary mb-2" style="padding: 30px">
+                <a href="{{route('farmers.show',$value)}}" class="tile tile-primary mb-2" style="padding: 30px">
                     {{ \App\Farmer::where('status',$value)->count() }} <p>{{ucwords($value)}} Farmers</p>
                 </a>
             </div>
@@ -16,7 +16,7 @@
     @if(auth()->user()->role_id == 2)
         @foreach(array('pending','approved','rejected') as $value)
             <div class="col-md-4">
-                <a href="#" class="tile tile-primary mb-2" style="padding: 30px">
+                <a href="{{route('farmers.show',$value)}}" class="tile tile-primary mb-2" style="padding: 30px">
                     {{ \App\Farmer::where('status',$value)->where('partner_id',auth()->user()->partner_id)->count() }} <p>{{ucwords($value)}} Farmers</p>
                 </a>
             </div>

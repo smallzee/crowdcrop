@@ -8,7 +8,7 @@
             <div class="profile-status online"></div>
         </div>
         <div class="profile-info">
-            <h4>{{ auth()->user()->name }}</h4>
+            <h4>{{ auth()->user()->name }} ({{ ucwords(auth()->user()->role->name) }})</h4>
         </div>
     </div>
 
@@ -60,6 +60,19 @@
         <li>
             <a href="{{route('settings.index')}}"><i class="fa fa-cogs"></i> <span>Website Settings</span></a>
         </li>
+        @endif
+
+        @if(auth()->user()->role_id == 2)
+            <li>
+                <a href="#"><i class="fa fa-users"></i> <span>Farmers</span></a>
+                <ul>
+                    @foreach(array('pending','approved','rejected') as $value)
+                        <li><a href="{{route('farmers.show',$value)}}"><i class="fa fa-circle-o"></i> &nbsp; All {{ ucwords($value) }} Farmers</a></li>
+                    @endforeach
+                </ul>
+            </li>
+
+            <li><a href="{{route('partners.show',auth()->user()->partner_id)}}"><i class="fa fa-user"></i> &nbsp;  {{ ucwords(auth()->user()->partner->name) }} Profile</a></li>
         @endif
 
         <li>

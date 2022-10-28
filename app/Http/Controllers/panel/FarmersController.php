@@ -59,7 +59,11 @@ class FarmersController extends Controller
     {
         //
         $page_title = "All ".ucwords($slug)." Farmers";
-        $farmers = Farmer::where('status',$slug)->orderBy('id')->paginate(20);
+        if (auth()->user()->role_id == 1){
+            $farmers = Farmer::where('status',$slug)->orderBy('id')->paginate(20);
+        }else{
+            $farmers = Farmer::where('status',$slug)->where('partner_id',auth()->user()->partner_id)->orderBy('id')->paginate(20);
+        }
         return view('panel.farmer.show',compact('page_title','farmers'));
     }
 

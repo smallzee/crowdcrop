@@ -66,6 +66,7 @@
             </tr>
         </table>
 
+        @if(auth()->user()->role_id == 2)
         <h5 class="page-header">Application Status</h5>
 
         <form action="{{route('farmers.update',$farmer->id)}}" method="post">
@@ -83,7 +84,7 @@
             <div class="form-group">
                 <label for="">Authorized By</label>
                 <select name="authorized_by" class="form-control" id="">
-                    @foreach(\App\User::orderBy('name')->get() as $value)
+                    @foreach(\App\User::where('partner_id',auth()->user()->partner_id)->orderBy('name')->get() as $value)
                         <option value="{{$value->id}}" {{ ($value->id == $farmer->authorized_by_id) ? 'selected' : '' }}>{{ ucwords($value->name) }}</option>
                     @endforeach
                 </select>
@@ -93,6 +94,7 @@
                 <input type="submit" class="btn btn-primary" value="Update" name="" id="">
             </div>
         </form>
+            @endif
     </div>
 </div>
 @endpush

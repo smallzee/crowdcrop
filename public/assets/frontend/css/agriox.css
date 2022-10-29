@@ -17,9 +17,9 @@
 # Common
 --------------------------------------------------------------*/
 :root {
-    --agriox-font: 'DM Sans', sans-serif;
-    --agriox-font-2: 'Averia Sans Libre', cursive;
-    --agriox-font-3: 'Shadows Into Light', cursive;
+    --agriox-font: 'Century Gothic', sans-serif;
+    --agriox-font-2: 'Century Gothic', sans-serif;
+    --agriox-font-3: 'Century Gothic', sans-serif;
     --agriox-base: #a2ddba;
     --agriox-base-rgb: 241, 207, 105;
     --agriox-primary: #334b35;
@@ -39,7 +39,7 @@
 }
 
 body {
-    font-family: var(--agriox-font, "DM Sans", sans-serif);
+    font-family: var(--agriox-font, 'Century Gothic', sans-serif);
     color: var(--agriox-color-1, #687469);
     font-size: 18px;
     line-height: 34px;
@@ -6409,11 +6409,11 @@ button {
 }
 
 .meet-farmers-one__single-title p {
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
+    font-family: 'Century Gothic', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+
 }
 
 .meet-farmers-one__single-title h2 {

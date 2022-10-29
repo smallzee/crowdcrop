@@ -141,7 +141,7 @@
                     <div class="services-one__single">
                         <div class="services-one__single-img">
                             <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/farm.png')}}" alt="" />
+                                <img src="{{asset('assets/images/services/services-v1-img2.jpg')}}" alt="" />
                             </div>
                         </div>
                         <div class="services-one__single-content text-center">
@@ -160,7 +160,7 @@
                     <div class="services-one__single">
                         <div class="services-one__single-img">
                             <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/farm.png')}}" alt="" />
+                                <img src="{{asset('assets/images/services/services-v1-img3.jpg')}}" alt="" />
                             </div>
 
                         </div>

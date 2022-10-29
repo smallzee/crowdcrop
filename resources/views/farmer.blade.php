@@ -140,7 +140,7 @@
 
                 if (price_per_kg >= 0 && volume_sold >= 0) {
                     var total_amount = price_per_kg  * volume_sold;
-                    $("#amount").val(total_amount);
+                    $("#amount").val("₦ "+total_amount);
                 }
             });
         });

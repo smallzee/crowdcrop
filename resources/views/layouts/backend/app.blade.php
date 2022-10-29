@@ -116,7 +116,7 @@
 <script type="text/javascript" src="{{asset('assets/backend/js/plugins/waypoint/waypoints.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/backend/js/plugins/counter/jquery.counterup.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('assets/backend/js/dev-settings.js')}}"></script>
+{{--<script type="text/javascript" src="{{asset('assets/backend/js/dev-settings.js')}}"></script>--}}
 <script type="text/javascript" src="{{asset('assets/backend/js/dev-loaders.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/backend/js/dev-layout-default.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/backend/js/demo.js')}}"></script>

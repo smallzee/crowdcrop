@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/agrofarm.iml" filepath="$PROJECT_DIR$/.idea/agrofarm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/crowdcrop.iml" filepath="$PROJECT_DIR$/.idea/crowdcrop.iml" />
     </modules>
   </component>
 </project>

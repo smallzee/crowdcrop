@@ -42,20 +42,26 @@
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <label for="">Email</label>
+                                    <label for="">Buyer's Email</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('email')}}" placeholder="Your email" name="email" id="email" required>
+                                        <input type="text" value="{{old('email')}}" placeholder="Buyer's email" name="email" id="email" required>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6">
-                                    <label for="">Name</label>
+                                    <label for="">Buyer's Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('name')}}" placeholder="Your name" name="name" id="name" required>
+                                        <input type="text" value="{{old('name')}}" placeholder="Buyer's name" name="name" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
-                                    <label for="">Phone Number</label>
+                                    <label for="">Farmer Name</label>
+                                    <div class="comment-form__input-box">
+                                        <input type="text" placeholder="Phone number" value="{{old('phone_number')}}" name="phone_number" id="phone_number" required>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <label for="">Farmer Phone Number</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Phone number" value="{{old('phone_number')}}" name="phone_number" id="phone_number" required>
                                     </div>
@@ -113,6 +119,13 @@
                                         <input type="text" placeholder="Account Name" name="account_name" value="{{old('account_name')}}"  id="account_name" required>
                                     </div>
                                 </div>
+
+                                <div class="col-xl-6 col-lg-6">
+                                    <label for="">Witness By</label>
+                                    <div class="comment-form__input-box">
+                                        <input type="text" placeholder="Account Name" name="account_name" value="{{old('account_name')}}"  id="account_name" required>
+                                    </div>
+                                </div>
                             </div>
                             <input type="hidden" name="partner_id" value="{{ $partner->id }}" id="">
                             <div style="margin-bottom: 20px;">
@@ -120,7 +133,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <button type="submit" class="thm-btn">Apply Now</button>
+                                    <button type="submit" class="thm-btn">Submit</button>
                                 </div>
                             </div>
                         </form>

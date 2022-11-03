@@ -44,20 +44,20 @@
                                 <div class="col-xl-12 col-lg-12">
                                     <label for="">Buyer's Email Address</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('email')}}" placeholder="Your email" name="email" id="email" required>
+                                        <input type="text" value="{{old('buyer_email')}}" placeholder="Buyer Email Address" name="buyer_email" id="email" required>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6">
                                     <label for="">Buyer's Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('name')}}" placeholder="Your name" name="name" id="name" required>
+                                        <input type="text" value="{{old('buyer_name')}}" placeholder="Buyer Name" name="buyer_name" id="buyer_name" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <label for="">Farmer Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('name')}}" placeholder="Your name" name="name" id="name" required>
+                                        <input type="text" value="{{old('farmer_name')}}" placeholder="Farmer Name" name="farmer_name" id="farmer_name" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12">
@@ -120,7 +120,7 @@
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6">
-                                    <label for="">Witness Name</label>
+                                    <label for="">Witness By</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Witness Name" name="witness_name" value="{{old('witness_name')}}"  id="account_name" required>
                                     </div>

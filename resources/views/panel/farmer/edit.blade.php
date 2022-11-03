@@ -9,15 +9,23 @@
                 <td>{{ $farmer->application_id }}</td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td>{{ $farmer->email }}</td>
+                <td>Buyer Email Address</td>
+                <td>{{ $farmer->buyer_email }}</td>
             </tr>
             <tr>
-                <td>Name</td>
-                <td>{{ $farmer->name }}</td>
+                <td>Buyer Name</td>
+                <td>{{ $farmer->buyer_name }}</td>
             </tr>
             <tr>
-                <td>Phone Number</td>
+                <td>Farmer Name</td>
+                <td>{{ $farmer->farmer_name }}</td>
+            </tr>
+            <tr>
+                <td>Witness By</td>
+                <td>{{ $farmer->witness_name }}</td>
+            </tr>
+            <tr>
+                <td>Farmer Phone Number</td>
                 <td>{{ $farmer->phone_number }}</td>
             </tr>
             <tr>

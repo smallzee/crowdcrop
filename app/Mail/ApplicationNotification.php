@@ -11,18 +11,20 @@ class ApplicationNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email,$name,$phone_number,$lga,$volume_sold,$amount_due,$price_per_kg,$bank_id,$account_number,$account_name,$application_id,$status,$authorized,$approved;
+    public $buyer_email,$buyer_name,$farmer_name,$witness_name,$phone_number,$lga,$volume_sold,$amount_due,$price_per_kg,$bank_id,$account_number,$account_name,$application_id,$status,$authorized,$approved;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($email,$name,$phone_number,$lga,$volume_sold,$amount_due,$price_per_kg,$bank_id,$account_number,$account_name,$application_id,$status,$authorized,$approved)
+    public function __construct($buyer_email,$buyer_name,$farmer_name,$witness_name,$phone_number,$lga,$volume_sold,$amount_due,$price_per_kg,$bank_id,$account_number,$account_name,$application_id,$status,$authorized,$approved)
     {
         //
-        $this->email = $email;
-        $this->name = $name;
+        $this->buyer_email = $buyer_email;
+        $this->buyer_name = $buyer_name;
+        $this->farmer_name = $farmer_name;
+        $this->witness_name = $witness_name;
         $this->phone_number = $phone_number;
         $this->lga = $lga;
         $this->volume_sold = $volume_sold;

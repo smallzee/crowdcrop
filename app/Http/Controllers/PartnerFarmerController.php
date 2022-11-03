@@ -43,8 +43,10 @@ class PartnerFarmerController extends Controller
         //
 
         $validator = Validator::make($request->all(),[
-            'name'=>'required',
-            'email'=>'required',
+            'buyer_name'=>'required',
+            'buyer_email'=>'required',
+            'farmer_name'=>'required',
+            'witness_name'=>'required',
             'phone_number'=>'required|unique:farmer|max:11',
             'lga'=>'required',
             'volume_sold'=>'required',
@@ -86,9 +88,11 @@ class PartnerFarmerController extends Controller
         $application_id = substr(strtoupper(md5(uniqid(rand(), true))), 0, 8);
 
         Farmer::create([
-            'email'=>$request->email,
-            'name'=>$request->name,
+            'buyer_email'=>$request->buyer_email,
+            'buyer_name'=>$request->buyer_name,
+            'farmer_name'=>$request->farmer_name,
             'phone_number'=>$request->phone_number,
+            'witness_name'=>$request->witness_name,
             'lga'=>$request->lga,
             'volume_sold'=>$request->volume_sold,
             'amount_due'=>$request->amount,
@@ -103,10 +107,8 @@ class PartnerFarmerController extends Controller
         if (getenv('APP_ENV') != "local"){
 
             foreach (User::where('partner_id',$request->partner_id)->get() as $value){
-                Mail::to($value->email)->send(new ApplicationNotification($request->email,$request->name,$request->phone_number,$request->lga,$request->volume_sold,$request->amount,$request->price_per_kg,$request->bank,$request->account_number,$request->account_name,$application_id,"pending"," "," "));
+                Mail::to($value->email)->send(new ApplicationNotification($request->buyer_email,$request->buyer_name,$request->farmer_name,$request->witness_name,$request->phone_number,$request->lga,$request->volume_sold,$request->amount,$request->price_per_kg,$request->bank,$request->account_number,$request->account_name,$application_id,"pending"," "," "));
             }
-
-            Mail::to(get_settings($request->email))->send(new ApplicationNotification($request->email,$request->name,$request->phone_number,$request->lga,$request->volume_sold,$request->amount,$request->price_per_kg,$request->bank,$request->account_number,$request->account_name,$application_id,"pending"," "," "));
         }
 
         return back()->with('alert_success','Your application has been sent successfully, kindly wait for approval');

@@ -109,8 +109,6 @@ class FarmersController extends Controller
         $authorized = User::find($request->authorized_by_id);
 
 
-        Mail::to(get_settings($farmer->email))->send(new ApplicationNotification($farmer->email,$farmer->name,$farmer->phone_number,$farmer->lga,$farmer->volume_sold,$farmer->amount,$farmer->price_per_kg,$farmer->bank,$farmer->account_number,$farmer->account_name,$farmer->application_id,$request->status,$authorized->name,auth()->user()->name));
-
         return back()->with('alert_success','Farmer application has been updated successfully');
     }
 

@@ -12,10 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/resources/logo.png')}}" />
     <meta name="description" content="{{ config('app.name') }} &dash; Agriculture Farming Services" />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Shadows+Into+Light&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('assets/frontend/vendors/bootstrap/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/frontend/vendors/animate/animate.min.css')}}" />

@@ -9,9 +9,10 @@
                 <tr>
                     <th>SN</th>
                     <th>Application Id</th>
-                    <th>Email Address</th>
-                    <th>Full Name</th>
-                    <th>Phone Number</th>
+                    <th>Buyer Email Address</th>
+                    <th>Buyer Name</th>
+                    <th>Farmer Name</th>
+                    <th>Farmer Phone Number</th>
                     <th>LGA</th>
                     <th>Volume Sold</th>
                     <th>Amount Due</th>
@@ -34,8 +35,9 @@
                     <tr>
                         <td>{{ $sn++ }}</td>
                         <td>{{ $value->application_id }}</td>
-                        <td>{{ $value->email }}</td>
-                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->buyer_email }}</td>
+                        <td>{{ $value->buyer_name }}</td>
+                        <td>{{ $value->farmer_name }}</td>
                         <td>{{ $value->phone_number }}</td>
                         <td>{{ $value->lga }}</td>
                         <td>{{$value->volume_sold}}</td>

@@ -132,7 +132,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <button type="submit" class="thm-btn">Apply Now</button>
+                                    <button type="submit" class="thm-btn">Submit</button>
                                 </div>
                             </div>
                         </form>

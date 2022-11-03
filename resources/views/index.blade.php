@@ -21,15 +21,15 @@
                 <!--Start Single Swiper Slide-->
                 <div class="swiper-slide">
                     <div class="image-layer"
-                         style="background-image: url({{asset('assets/images/backgrounds/main-slider-v1-1.jpg')}});"></div>
+                         style="background-image: url({{asset('assets/images/backgrounds/Farm-Picture.png')}});"></div>
                     <div class="image-layer-overlay"></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="main-slider-inner">
                                     <div class="main-slider__content">
-                                        <span class="main-slider-tagline">We’re producing natural goods</span>
-                                        <h2 class="main-slider__title">Welcome to <br> {{config('app.name')}} <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></span>Farm</span></h2>
+                                        <span class="main-slider-tagline">Crowdcrop</span>
+                                        <h2 class="main-slider__title">{{config('app.name')}} is an agritech business with a focus on providing financial and operational support services <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></h2>
                                     </div>
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />
@@ -45,15 +45,15 @@
                 <!--Start Single Swiper Slide-->
                 <div class="swiper-slide">
                     <div class="image-layer"
-                         style="background-image: url({{asset('assets/images/backgrounds/main-slider-v1-3.jpg')}});"></div>
+                         style="background-image: url(https://geneticliteracyproject.org/wp-content/uploads/2019/03/farming-.jpg);"></div>
                     <div class="image-layer-overlay"></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="main-slider-inner">
                                     <div class="main-slider__content">
-                                        <span class="main-slider-tagline">We’re producing natural goods</span>
-                                        <h2 class="main-slider__title">Welcome to <br> {{config('app.name')}} <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></span>Farm</span></h2>
+                                        <span class="main-slider-tagline">CrowdCrop</span>
+                                        <h2 class="main-slider__title">{{config('app.name')}} aimed at promoting rural and agricultural finance. <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></h2>
                                     </div>
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />
@@ -82,47 +82,7 @@
     </section>
     <!--Main Slider End-->
 
-    <!--Services One Start-->
-    <section class="services-one">
-        <div class="services-one__bg wow slideInDown" data-wow-delay="100ms" data-wow-duration="2500ms"></div>
-        <div class="container">
-            <div class="sec-title text-center">
-                <div class="icon">
-                    <img src="{{asset('assets/images/resources/logo.png')}}" style="width: 150px" alt="">
-                </div>
-                <h2 class="sec-title__title">{{  config('app.name')  }} Background</h2>
-            </div>
-            <div class="row">
 
-                @foreach(\App\Partners::whereStatus(1)->orderBy('name')->paginate(10) as $value)
-
-                <!--Start Single Services One-->
-                <div class="col-xl-4 col-lg-6 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/'.$value->image)}}" alt="" />
-                            </div>
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                <span class="icon-harvest"></span>
-                            </div>
-
-                            <h1>{{ $value->name }}</h1>
-                            <p class="mt-2 mb-2">{{ $value->description }}</p>
-
-                            <a href="{{route('partner-farmer.show',base64_encode($value->id))}}" class="btn btn-outline-success btn-md">Farmer Registration</a>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-
-                @endforeach
-
-        </div>
-    </section>
-    <!--Services One End-->
 
     <!--Services One Start-->
     <section class="services-one">
@@ -130,9 +90,9 @@
         <div class="container">
             <div class="sec-title text-center">
                 <div class="icon">
-                    <img src="{{asset('assets/images/resources/logo.png')}}" style="width: 150px" alt="">
+                    <img src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 150px" alt="">
                 </div>
-                <h2 class="sec-title__title">{{  config('app.name')  }} Our Solution</h2>
+                <h2 class="sec-title__title">Problem Statement</h2>
             </div>
             <div class="row">
 
@@ -148,7 +108,7 @@
                             <div class="services-one__single-img-icon">
                                 <span class="icon-harvest"></span>
                             </div>
-                            <p>Create an online portal to initiate, manage and approve cash payment requests</p>
+                            <p>Farmers are the largest group of financially excluded persons in Nigeria, thereby highlighting the supply shortfall in finance to agriculture in Nigeria.</p>
                         </div>
                     </div>
                 </div>
@@ -168,7 +128,7 @@
                             <div class="services-one__single-img-icon">
                                 <span class="icon-growth"></span>
                             </div>
-                            <p>Deploy on-site agents to initiate requests and disburse bulk cash upon approval</p>
+                            <p>Most smallholder farmers are either unbanked or underserved due to lack of adequate banking or infrastructure in rural areas.</p>
                         </div>
                     </div>
                 </div>
@@ -179,14 +139,14 @@
                     <div class="services-one__single">
                         <div class="services-one__single-img">
                             <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/farm.png')}}" alt="" />
+                                <img height="301" width="301" src="https://www.climatelinks.org/sites/default/files/styles/hero_blog/public/assets/images/2022-08/Climate-Finance-Hero-Image.jpg?itok=5ngiVggl" alt="" />
                             </div>
                         </div>
                         <div class="services-one__single-content text-center">
                             <div class="services-one__single-img-icon">
                                 <span class="icon-dairy-products"></span>
                             </div>
-                            <p>Earn a percentage (2%) on each transaction as processing fees</p>
+                            <p>Availability of finance would go a long way in improving output and productivity in Agriculture, and consequently help in reducing poverty.</p>
                         </div>
                     </div>
                 </div>
@@ -197,100 +157,13 @@
     <!--Services One End-->
 
 
-    <!--Services One Start-->
-    <section class="services-one">
-        <div class="services-one__bg wow slideInDown" data-wow-delay="100ms" data-wow-duration="2500ms"></div>
-        <div class="container">
-            <div class="sec-title text-center">
-                <div class="icon">
-                    <img src="{{asset('assets/images/resources/logo.png')}}" style="width: 150px" alt="">
-                </div>
-                <h2 class="sec-title__title">How It Works</h2>
-            </div>
-            <div class="row">
-
-                <!--Start Single Services One-->
-                <div class="col-xl-3 col-lg-6 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img1.jpg')}}" alt="" />
-                            </div>
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                1
-                            </div>
-                            <p>AgroEknor buyer requests cash payment for products purchased by AgroEknor</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-
-                <!--Start Single Services One-->
-                <div class="col-xl-3 col-lg-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img2.jpg')}}" alt="" />
-                            </div>
-
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                2
-                            </div>
-                            <p>{{config('app.name')}} agent initiates request and obtains approval from AgroEknor via the online portal</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-
-                <!--Start Single Services One-->
-                <div class="col-xl-3 col-lg-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img3.jpg')}}" alt="" />
-                            </div>
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                3
-                            </div>
-                            <p>Once approval is obtained, {{config('app.name')}} agent disburses cash to AgroEknor buyer</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-
-                <!--Start Single Services One-->
-                <div class="col-xl-3 col-lg-6 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1000ms">
-                    <div class="services-one__single">
-                        <div class="services-one__single-img">
-                            <div class="services-one__single-img-inner">
-                                <img src="{{asset('assets/images/services/services-v1-img4.jpg')}}" alt="" />
-                            </div>
-                        </div>
-                        <div class="services-one__single-content text-center">
-                            <div class="services-one__single-img-icon">
-                                4
-                            </div>
-                            <p>AgroEknor settles all liability schedules and processing fees per agreed conditions</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Services One-->
-            </div>
-        </div>
-    </section>
-    <!--Services One End-->
+    
 
     <section class="meet-farmers-one meet-farmers-one--about">
         <div class="container">
             <div class="sec-title text-center">
                 <div class="icon">
-                    <img src="{{asset('assets/images/resources/logo.png')}}" style="width: 150px" alt="">
+                    <img src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 150px" alt="">
                 </div>
                 <h2 class="sec-title__title">Management Team</h2>
             </div>

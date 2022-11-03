@@ -13,7 +13,9 @@
     <meta name="description" content="{{ config('app.name') }} &dash; Agriculture Farming Services" />
 
     <!-- fonts -->
-    <link href="http://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Shadows+Into+Light&amp;display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('assets/frontend/vendors/bootstrap/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/frontend/vendors/animate/animate.min.css')}}" />
@@ -41,7 +43,7 @@
     <link rel="stylesheet" href="{{asset('assets/frontend/vendors/toolbar/css/toolbar.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
     <script src="{{asset('assets/frontend/vendors/jquery/jquery-3.5.1.min.js')}}"></script>
-    <script src="https://www.google.com/recaptcha/api.js?{{get_settings('6LeZlWUiAAAAAH4V_2xnN6i8fnTUlLeskVOrBKLe')}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?6LdqzMYiAAAAAMkmxWJwtp-qslLZarncT2KSWuqD"></script>
     <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>

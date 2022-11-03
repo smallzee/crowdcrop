@@ -42,47 +42,46 @@
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <label for="">Buyer's Email</label>
+                                    <label for="">Buyer's Email Address</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('email')}}" placeholder="Buyer's email" name="email" id="email" required>
+                                        <input type="text" value="{{old('email')}}" placeholder="Your email" name="email" id="email" required>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6">
                                     <label for="">Buyer's Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" value="{{old('name')}}" placeholder="Buyer's name" name="name" id="name" required>
+                                        <input type="text" value="{{old('name')}}" placeholder="Your name" name="name" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <label for="">Farmer Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Phone number" value="{{old('phone_number')}}" name="phone_number" id="phone_number" required>
+                                        <input type="text" value="{{old('name')}}" placeholder="Your name" name="name" id="name" required>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6">
+                                <div class="col-xl-12 col-lg-12">
                                     <label for="">Farmer Phone Number</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Phone number" value="{{old('phone_number')}}" name="phone_number" id="phone_number" required>
                                     </div>
                                 </div>
-                                <div class="col-xl-12 col-lg-12">
+                                <div class="col-xl-6 col-lg-6">
                                     <label for="">Local Government</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Local Government" name="lga" value="{{old('lga')}}" id="lga" required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
+                                <div class="col-xl-6 col-lg-6">
                                     <label for="">Volume Sold (in Kg)</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Volume Sold (in Kg)" name="volume_sold" id="volume_sold" value="{{old('volume_sold')}}" id="volume_sold" required>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
-                                <div class="col-xl-6 col-lg-6">
+                                <div class="col-xl-12 col-lg-12">
                                     <label for="">Price Per Kg</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Price Per Kg" name="price_per_kg" value="{{old('price_per_kg')}}"  id="price_per_kg" required>
@@ -94,7 +93,7 @@
                                         <input type="text" placeholder="Amount Due" readonly name="amount" value="{{old('amount')}}" id="amount">
                                     </div>
                                 </div>
-                                <div class="col-xl-12 col-lg-12">
+                                <div class="col-xl-6 col-lg-6">
                                     <label for="">Bank Name</label>
                                     <div class="comment-form__input-box">
                                         <select name="bank" class="form-control" required id="bank" >
@@ -106,7 +105,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-6 col-lg-6">
+                                <div class="col-xl-12 col-lg-12">
                                     <label for="">Account Number</label>
                                     <div class="comment-form__input-box">
                                         <input type="text" placeholder="Account Number" name="account_number" value="{{old('account_number')}}"  id="account_number" required>
@@ -121,9 +120,9 @@
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6">
-                                    <label for="">Witness By</label>
+                                    <label for="">Witness Name</label>
                                     <div class="comment-form__input-box">
-                                        <input type="text" placeholder="Account Name" name="account_name" value="{{old('account_name')}}"  id="account_name" required>
+                                        <input type="text" placeholder="Witness Name" name="witness_name" value="{{old('witness_name')}}"  id="account_name" required>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +132,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <button type="submit" class="thm-btn">Submit</button>
+                                    <button type="submit" class="thm-btn">Apply Now</button>
                                 </div>
                             </div>
                         </form>
@@ -153,7 +152,7 @@
 
                 if (price_per_kg >= 0 && volume_sold >= 0) {
                     var total_amount = price_per_kg  * volume_sold;
-                    $("#amount").val("₦ "+total_amount);
+                    $("#amount").val(total_amount);
                 }
             });
         });

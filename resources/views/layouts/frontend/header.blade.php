@@ -34,8 +34,8 @@
                             <div class="stricky-one-logo">
                                 <div class="logo">
                                     <a href="{{url('/')}}">
-                                        <img class="dark-logo" src="{{asset('assets/images/resources/logo-1.png')}}" style="width: 100%; height: 60px"  alt="">
-                                        <img class="light-logo" src="{{asset('assets/images/resources/logo-2.png')}}" style="width: 100%; height: 60px"  alt="">
+                                        <img class="dark-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 100%; height: 60px"  alt="">
+                                        <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 100%; height: 60px"  alt="">
                                     </a>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                 <ul class="main-menu__list">
                                     <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
                                     <li class="dropdown">
-                                        <a href="#">{{ config('app.name') }} Partners</a>
+                                        <a href="#">Partners</a>
                                         <ul>
                                             @foreach(\App\Partners::whereStatus(1)->orderBy('name')->get() as $value)
                                             <li><a href="{{route('partner.show',base64_encode($value->id))}}">{{ ucwords($value->name) }}</a></li>
@@ -61,8 +61,8 @@
                     <div class="main-header--one__bottom-middel">
                         <div class="logo">
                             <a href="{{url('/')}}">
-                                <img class="dark-logo" src="{{asset('assets/images/resources/logo-1.png')}}"  style="width: 120px; height: 60px" alt="">
-                                <img class="light-logo" src="{{asset('assets/images/resources/logo-2.png')}}"  style="width: 120px; height: 60px" alt="">
+                                <img class="dark-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 100%; height: 60px" alt="">
+                                <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 100%; height: 60px" alt="">
                             </a>
                         </div>
                     </div>

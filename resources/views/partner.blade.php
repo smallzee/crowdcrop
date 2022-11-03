@@ -21,11 +21,11 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
                     <div class="services-details__content">
-                        <div class="services-details__content-img">
-                            <img src="{{asset('assets/images/'.$partner->image)}}" alt="" />
+                        <div class="">
+                            <img width = "120" height="120" src="{{asset('assets/images/'.$partner->image)}}" alt="" />
                         </div>
                         <div class="services-details__content-icon">
-                            <span class="icon-harvest"></span>
+                            <!--<span class="icon-harvest"></span>-->
                         </div>
                         <h2 class="services-details__content-title">{{ ucwords($partner->name) }}</h2>
                         <p class="services-details__content-text1">{{ $partner->description }}</p>

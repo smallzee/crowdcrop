@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 29, 2022 at 11:47 AM
+-- Generation Time: Nov 05, 2022 at 03:59 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -12,7 +12,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Database: `web_agrofarm`
+-- Database: `web_crowdcrop`
 --
 
 -- --------------------------------------------------------
@@ -86,15 +86,17 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `farmer` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `buyer_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `buyer_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `farmer_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `volume_sold` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `amount_due` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price_per_kg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `bank_id` int(11) NOT NULL,
-  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `withness_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `account_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `application_id` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `partner_id` int(11) NOT NULL DEFAULT 0,
@@ -109,8 +111,8 @@ CREATE TABLE `farmer` (
 -- Dumping data for table `farmer`
 --
 
-INSERT INTO `farmer` (`id`, `email`, `name`, `phone_number`, `lga`, `volume_sold`, `amount_due`, `price_per_kg`, `bank_id`, `account_number`, `account_name`, `application_id`, `partner_id`, `status`, `authorized_by_id`, `approved_by_id`, `created_at`, `updated_at`) VALUES
-(1, '', 'oluwagbenga matanmi', '07032077894', 'aa', '10', '40', '091', 3, '0183930393', 'ADEKUNLE ADEWALE UTHMAN', '1D6A8334', 1, 'approved', 1, 1, '2022-10-09 16:35:56', '2022-10-09 17:12:17');
+INSERT INTO `farmer` (`id`, `buyer_email`, `buyer_name`, `farmer_name`, `phone_number`, `account_number`, `lga`, `volume_sold`, `amount_due`, `price_per_kg`, `bank_id`, `withness_name`, `account_name`, `application_id`, `partner_id`, `status`, `authorized_by_id`, `approved_by_id`, `created_at`, `updated_at`) VALUES
+(1, '', '', 'oluwagbenga matanmi', '07032077894', '0183930393', 'aa', '10', '40', '091', 3, '', 'ADEKUNLE ADEWALE UTHMAN', '1D6A8334', 1, 'approved', 1, 1, '2022-10-09 16:35:56', '2022-10-09 17:12:17');
 
 -- --------------------------------------------------------
 
@@ -136,7 +138,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2022_10_09_163424_create_banks_table', 3),
 (6, '2022_10_09_164902_create_farmer_table', 4),
 (7, '2022_10_27_180945_create_role_table', 5),
-(8, '2022_10_27_191555_create_partners_table', 6);
+(8, '2022_10_27_191555_create_partners_table', 6),
+(9, '2022_11_03_103449_add_fields_to_farmer_table', 7);
 
 -- --------------------------------------------------------
 
@@ -336,7 +339,7 @@ ALTER TABLE `farmer`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `partners`

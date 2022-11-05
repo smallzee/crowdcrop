@@ -15,7 +15,10 @@ class CreateFarmerTable extends Migration
     {
         Schema::create('farmer', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('buyer_email');
+            $table->string('buyer_name');
+            $table->string('farmer_name');
+            $table->string('withness_name');
             $table->string('phone_number');
             $table->string('lga');
             $table->string('volume_sold');

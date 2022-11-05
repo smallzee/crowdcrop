@@ -29,7 +29,7 @@
                                 <div class="main-slider-inner">
                                     <div class="main-slider__content">
                                         <span class="main-slider-tagline">Crowdcrop</span>
-                                        <h4 class="main-slider__title">{{config('app.name')}} is an agritech business with a focus on providing financial and operational support services <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></h4>
+                                        <h4 style="font-size: 40px; line-height: 70px" class="main-slider__title">{{config('app.name')}} is an agritech business with a focus on providing financial and operational support services <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></span></h4>
                                     </div>
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />
@@ -53,7 +53,7 @@
                                 <div class="main-slider-inner">
                                     <div class="main-slider__content">
                                         <span class="main-slider-tagline">CrowdCrop</span>
-                                        <h4 class="main-slider__title">{{config('app.name')}} aimed at promoting rural and agricultural finance. <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></h4>
+                                        <h4 style="font-size: 40px; line-height: 70px" class="main-slider__title">{{config('app.name')}} aimed at promoting rural and agricultural finance. <span><span class="leaf"><img src="{{asset('assets/images/resources/leaf.png')}}" alt="" /></span></h4>
                                     </div>
                                     <div class="main-slider__button-box">
                                         <div class="arrow-icon"><img src="{{asset('assets/images/icon/main-slider__button-arrow.png')}}" alt="" />

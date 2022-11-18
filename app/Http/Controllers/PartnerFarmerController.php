@@ -55,7 +55,10 @@ class PartnerFarmerController extends Controller
             'bank'=>'required',
             'account_number'=>'required|numeric|min:10',
             'account_name'=>'required',
-            'g-recaptcha-response'=>'required'
+            'g-recaptcha-response'=>'required',
+            'delivery_date'=>'required',
+            'payment_type'=>'required',
+            'point_of_delivery'=>'required',
         ]);
 
         if ($validator->fails()){
@@ -101,7 +104,10 @@ class PartnerFarmerController extends Controller
             'partner_id'=>$request->partner_id,
             'account_number'=>$request->account_number,
             'account_name'=>$request->account_name,
-            'application_id'=>$application_id
+            'application_id'=>$application_id,
+            'delivery_date'=>$request->delivery_date,
+            'payment_type'=>$request->payment_type,
+            'point_of_delivery'=>$request->point_of_delivery,
         ]);
 
         if (getenv('APP_ENV') != "local"){

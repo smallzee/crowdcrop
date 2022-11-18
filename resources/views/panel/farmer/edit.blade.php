@@ -65,6 +65,18 @@
                 <td>{{ $farmer->status }}</td>
             </tr>
             <tr>
+                <td>Delivery Date</td>
+                <td>{{ $farmer->delivery_date }}</td>
+            </tr>
+            <tr>
+                <td>Point Of Delivery</td>
+                <td>{{ $farmer->point_of_delivery }}</td>
+            </tr>
+            <tr>
+                <td>Payment Type</td>
+                <td>{{ $farmer->payment_type }}</td>
+            </tr>
+            <tr>
                 <td>Authorized By</td>
                 <td>{{ ($farmer->authorized_by_id != 0) ? \App\User::find($farmer->authorized_by_id)->name : 'N/A' }}</td>
             </tr>

@@ -43,6 +43,8 @@
     <script src="https://www.google.com/recaptcha/api.js?6LdqzMYiAAAAAMkmxWJwtp-qslLZarncT2KSWuqD"></script>
     <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 </head>
 <body>
 
@@ -132,6 +134,10 @@
 <script src="{{asset('assets/frontend/vendors/toolbar/js/toolbar.lang.js')}}"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="{{asset('assets/frontend/vendors/toolbar/js/toolbar.js')}}"></script>
+
+<script>
+    $('[data-toggle="datepicker"]').datepicker();
+</script>
 
 </body>
 </html>

@@ -32,6 +32,9 @@ class CreateFarmerTable extends Migration
             $table->enum('status',['pending','approved','rejected'])->default('pending');
             $table->integer('authorized_by_id')->default('0');
             $table->integer('approved_by_id')->default(0);
+            $table->string('delivery_date');
+            $table->string('point_of_delivery');
+            $table->string('payment_type');
             $table->timestamps();
         });
     }

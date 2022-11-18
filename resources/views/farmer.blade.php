@@ -125,6 +125,32 @@
                                         <input type="text" placeholder="Witness Name" name="witness_name" value="{{old('witness_name')}}"  id="account_name" required>
                                     </div>
                                 </div>
+
+                                <div class="col-xl-12 col-lg-12">
+                                    <label for="">Date Of Delivery</label>
+                                    <div class="comment-form__input-box">
+                                        <input type="text" data-toggle="datepicker"  placeholder="Date Of Delivery" name="delivery_date" value="{{old('delivery_date')}}"  id="delivery_date" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6">
+                                    <label for="">Payment type</label>
+                                    <div class="comment-form__input-box">
+                                        <select name="payment_type" class="form-control" required id="payment_type" >
+                                            <option value="">Select</option>
+                                            @foreach(array('cash','transfer') as $value)
+                                                <option value="{{$value}}">{{ ucwords($value) }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6">
+                                    <label for="">Point Of Delivery</label>
+                                    <div class="comment-form__input-box">
+                                        <input type="text" placeholder="Point of delivery" name="point_of_delivery" value="{{old('point_of_delivery')}}"  id="point_of_delivery" required>
+                                    </div>
+                                </div>
                             </div>
                             <input type="hidden" name="partner_id" value="{{ $partner->id }}" id="">
                             <div style="margin-bottom: 20px;">

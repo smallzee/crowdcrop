@@ -35,7 +35,7 @@
                                 <div class="logo">
                                     <a href="{{url('/')}}">
                                         <img class="dark-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 100%; height: 60px"  alt="">
-                                        <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 100%; height: 60px"  alt="">
+                                        <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" style="width: 500%; height: 60px"  alt="">
                                     </a>
                                 </div>
                             </div>
@@ -61,8 +61,8 @@
                     <div class="main-header--one__bottom-middel">
                         <div class="logo">
                             <a href="{{url('/')}}">
-                                <img class="dark-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 100%; height: 60px" alt="">
-                                <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 100%; height: 60px" alt="">
+                                <img class="dark-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 200px; height: 60px" alt="">
+                                <img class="light-logo" src="{{asset('assets/images/resources/crowdcrop logo.png')}}"  style="width: 200px; height: 60px" alt="">
                             </a>
                         </div>
                     </div>

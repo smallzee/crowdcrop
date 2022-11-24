@@ -49,7 +49,7 @@
 <body>
 
 <div class="preloader">
-    <img class="preloader__image" style="width: 50%" src="{{asset('assets/images/resources/logo.png')}}" alt="" />
+    <img class="preloader__image" style="width: 50%" src="{{asset('assets/images/resources/crowdcrop logo.png')}}" alt="" />
 </div>
 
 @include('flash')
